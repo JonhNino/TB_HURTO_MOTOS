@@ -334,6 +334,43 @@
         ]
       }
     ],
+    "relationships": [
+      {
+        "name": "d4d06a06-0271-4220-86d3-2c6069c736a7",
+        "fromTable": "TBL_FACT_HURTO_MOTO",
+        "fromColumn": "SK_DIM_MODALIDAD_HURTO",
+        "toTable": "TBL_DIM_PRODUCTO_HURTADO_T0",
+        "toColumn": "SK_DIM_PRODUCTO_HURTADO"
+      },
+      {
+        "name": "bd94eade-e8a2-4df1-85fe-f57f485e626b",
+        "fromTable": "TBL_FACT_HURTO_MOTO",
+        "fromColumn": "SK_DIM_SEDE_RECEPTORA",
+        "toTable": "TBL_DIM_SEDE_RECEPTORA_T0",
+        "toColumn": "SK_DIM_SEDE_RECEPTORA"
+      },
+      {
+        "name": "f83658f2-6b55-4f59-b1fe-d332793bf5fd",
+        "fromTable": "TBL_FACT_HURTO_MOTO",
+        "fromColumn": "SK_DIM_UBICACION",
+        "toTable": "TBL_DIM_UBICACION_T0",
+        "toColumn": "SK_DIM_UBICACION"
+      },
+      {
+        "name": "a3e56710-43bb-4bea-85c4-0577329a25dd",
+        "fromTable": "TBL_FACT_HURTO_MOTO",
+        "fromColumn": "SK_DIM_MODALIDAD_HURTO",
+        "toTable": "TBL_DIM_MODALIDAD_HURTO_T0",
+        "toColumn": "SK_DIM_MODALIDAD_HURTO"
+      },
+      {
+        "name": "ef63cc38-e97e-43a9-88e5-3f1adb0772ff",
+        "fromTable": "TBL_FACT_HURTO_MOTO",
+        "fromColumn": "SK_DIM_PERSONA",
+        "toTable": "TBL_DIM_PERSONA_T0",
+        "toColumn": "SK_DIM_PERSONA"
+      }
+    ],
     "annotations": [
       {
         "name": "ClientCompatibilityLevel",
