@@ -1,0 +1,345 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1400,
+  "model": {
+    "culture": "es-CO",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-LSG58H1\\SQLSERVER",
+            "database": "DWH_UPTC"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "desktop-lsg58h1\\sqlserver;DWH_UPTC",
+          "Username": "UPTC",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "TBL_FACT_HURTO_MOTO",
+        "columns": [
+          {
+            "name": "SK_DIM_TIEMPO",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_TIEMPO"
+          },
+          {
+            "name": "SK_DIM_MODALIDAD_HURTO",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_MODALIDAD_HURTO"
+          },
+          {
+            "name": "SK_DIM_PRODUCTO_HURTADO",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_PRODUCTO_HURTADO"
+          },
+          {
+            "name": "SK_DIM_SEDE_RECEPTORA",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_SEDE_RECEPTORA"
+          },
+          {
+            "name": "SK_DIM_UBICACION",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_UBICACION"
+          },
+          {
+            "name": "SK_DIM_PERSONA",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_PERSONA"
+          },
+          {
+            "name": "NUM_CANTIDAD",
+            "dataType": "int64",
+            "sourceColumn": "NUM_CANTIDAD"
+          },
+          {
+            "name": "DT_FECHA_CARGUE",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_CARGUE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_FACT_HURTO_MOTO = Source{[Schema=\"dbo\",Item=\"TBL_FACT_HURTO_MOTO\"]}[Data]",
+                "in",
+                "    dbo_TBL_FACT_HURTO_MOTO"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_UBICACION_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_UBICACION",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_UBICACION"
+          },
+          {
+            "name": "STR_CODIGO_COMUNA",
+            "dataType": "string",
+            "sourceColumn": "STR_CODIGO_COMUNA"
+          },
+          {
+            "name": "STR_BARRIO",
+            "dataType": "string",
+            "sourceColumn": "STR_BARRIO"
+          },
+          {
+            "name": "STR_LUGAR",
+            "dataType": "string",
+            "sourceColumn": "STR_LUGAR"
+          },
+          {
+            "name": "STR_LATITUD",
+            "dataType": "string",
+            "sourceColumn": "STR_LATITUD"
+          },
+          {
+            "name": "STR_LONGITUD",
+            "dataType": "string",
+            "sourceColumn": "STR_LONGITUD"
+          },
+          {
+            "name": "DT_FECHA_ACTUALIZACION",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_ACTUALIZACION"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_DIM_UBICACION_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_UBICACION_T0\"]}[Data]",
+                "in",
+                "    dbo_TBL_DIM_UBICACION_T0"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_SEDE_RECEPTORA_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_SEDE_RECEPTORA",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_SEDE_RECEPTORA"
+          },
+          {
+            "name": "STR_SEDE_RECEPTORA",
+            "dataType": "string",
+            "sourceColumn": "STR_SEDE_RECEPTORA"
+          },
+          {
+            "name": "DT_FECHA_ACTUALIZACION",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_ACTUALIZACION"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_DIM_SEDE_RECEPTORA_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_SEDE_RECEPTORA_T0\"]}[Data]",
+                "in",
+                "    dbo_TBL_DIM_SEDE_RECEPTORA_T0"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_PRODUCTO_HURTADO_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_PRODUCTO_HURTADO",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_PRODUCTO_HURTADO"
+          },
+          {
+            "name": "STR_BIEN",
+            "dataType": "string",
+            "sourceColumn": "STR_BIEN"
+          },
+          {
+            "name": "STR_CATEGORIA_BIEN",
+            "dataType": "string",
+            "sourceColumn": "STR_CATEGORIA_BIEN"
+          },
+          {
+            "name": "STR_GRUPO_BIEN",
+            "dataType": "string",
+            "sourceColumn": "STR_GRUPO_BIEN"
+          },
+          {
+            "name": "STR_MODELO",
+            "dataType": "string",
+            "sourceColumn": "STR_MODELO"
+          },
+          {
+            "name": "STR_COLOR",
+            "dataType": "string",
+            "sourceColumn": "STR_COLOR"
+          },
+          {
+            "name": "DT_FECHA_ACTUALIZACION",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_ACTUALIZACION"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_DIM_PRODUCTO_HURTADO_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_PRODUCTO_HURTADO_T0\"]}[Data]",
+                "in",
+                "    dbo_TBL_DIM_PRODUCTO_HURTADO_T0"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_MODALIDAD_HURTO_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_MODALIDAD_HURTO",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_MODALIDAD_HURTO"
+          },
+          {
+            "name": "STR_MODALIDAD",
+            "dataType": "string",
+            "sourceColumn": "STR_MODALIDAD"
+          },
+          {
+            "name": "STR_CONDUCTA_ESPECIAL",
+            "dataType": "string",
+            "sourceColumn": "STR_CONDUCTA_ESPECIAL"
+          },
+          {
+            "name": "STR_MEDIO_TRANSPORTE",
+            "dataType": "string",
+            "sourceColumn": "STR_MEDIO_TRANSPORTE"
+          },
+          {
+            "name": "STR_ARMA_MEDIO",
+            "dataType": "string",
+            "sourceColumn": "STR_ARMA_MEDIO"
+          },
+          {
+            "name": "DT_FECHA_ACTUALIZACION",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_ACTUALIZACION"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_DIM_MODALIDAD_HURTO_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_MODALIDAD_HURTO_T0\"]}[Data]",
+                "in",
+                "    dbo_TBL_DIM_MODALIDAD_HURTO_T0"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_PERSONA_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_PERSONA",
+            "dataType": "int64",
+            "sourceColumn": "SK_DIM_PERSONA"
+          },
+          {
+            "name": "STR_EDAD",
+            "dataType": "string",
+            "sourceColumn": "STR_EDAD"
+          },
+          {
+            "name": "STR_SEXO",
+            "dataType": "string",
+            "sourceColumn": "STR_SEXO"
+          },
+          {
+            "name": "STR_ESTADO_CIVIL",
+            "dataType": "string",
+            "sourceColumn": "STR_ESTADO_CIVIL"
+          },
+          {
+            "name": "DT_FECHA_ACTUALIZACION",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_FECHA_ACTUALIZACION"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-LSG58H1\\SQLSERVER;DWH_UPTC\",",
+                "    dbo_TBL_DIM_PERSONA_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_PERSONA_T0\"]}[Data]",
+                "in",
+                "    dbo_TBL_DIM_PERSONA_T0"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "500"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
